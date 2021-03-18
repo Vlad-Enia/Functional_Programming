@@ -1,0 +1,36 @@
+Fisa lavorator
+1. Definiti un tip de date Nat pentru numere naturale reprezentate in baza 2.
+
+V1. data Nat = Cons [Bool]
+[False, True, True] = 011 = 6 -- stanga -> drepta
+
+[False] = 0
+[True] = 1
+
+V2. [False, True, True] = 011 = 3 -- dreapta -> stanga
+
+
+V3.
+data Nat = Zero | Unu | Double Nat | DoubleAddOne Nat
+
+3 = doubleAddOne(DoubleAddOne Zero)
+
+0 = Zero = Double Zero
+
+7 = DoubleAddOne 3 = DoubleAddOne (DoubleAddOne 1) = DoubleAddOne (DoubleAddOne (DoubleAddOne Zero))
+
+8 = Double (Double (Double (DoubleAddOne Zero)))
+
+
+Exercitii:
+2. Definiti instance Eq Nat - dificultate: 011 = 01100000..000
+3. Definiti instance Ord Nat - 
+4. Definiti instance Integral Nat 
+5. Definiti instance Num Nat 
+
+6. Complex a = numere comlexe a caror componente sunt de tip a (e.g Complex Int, Complex Float)
+
+7. Definiti propria clasa MyOrd, similara cu Ord si 
+- sa faceti Int o instanta a clasei MyOrd
+- sa faceti [a] instanta a MyOrd daca a este o instanta a MyOrd
+- sa faceti un algoritm de sortare :: MyOrd a => [a] -> [a]
