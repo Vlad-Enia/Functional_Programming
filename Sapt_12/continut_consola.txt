@@ -1,0 +1,353 @@
+Prelude> :l lab12.hs 
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+
+lab12.hs:68:5: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In a case alternative: Nothing -> ...       
+   |
+68 |     Nothing -> Nothing
+   |     ^^^^^^^^^^^^^^^^^^
+
+lab12.hs:70:5: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In a case alternative: Just term1' -> ...
+   |
+70 |     Just term1' -> Just (App term1' term2)
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ok, one module loaded.
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+
+lab12.hs:62:5: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In a case alternative: Nothing -> ...
+   |
+62 |     Nothing -> Nothing
+   |     ^^^^^^^^^^^^^^^^^^
+
+lab12.hs:64:5: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In a case alternative: Just term1' -> ...
+   |
+64 |     Just term1' -> Just (App term1' term2)
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ok, one module loaded.
+*Main> :r           
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+
+lab12.hs:62:5: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In a case alternative: Nothing -> ...
+   |
+62 |     Nothing -> Nothing
+   |     ^^^^^^^^^^^^^^^^^^
+
+lab12.hs:64:5: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In a case alternative: Just term1' -> ...
+   |
+64 |     Just term1' -> Just (App term1' term2)
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ok, one module loaded.
+*Main> ex1
+Nothing
+*Main> ex2
+Just (Lambda "x" (Var "x"))
+*Main> ex3
+Just (Lambda "y" (Lambda "x" (Lambda "x" (Var "x"))))
+*Main> ex4
+Just (Lambda "x" (App (Lambda "x" (Var "x")) (Lambda "x" (Var "x"))))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+
+lab12.hs:62:5: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In a case alternative: Nothing -> ...
+   |
+62 |     Nothing -> Nothing
+   |     ^^^^^^^^^^^^^^^^^^
+
+lab12.hs:64:5: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In a case alternative: Just term1' -> ...
+   |
+64 |     Just term1' -> Just (App term1' term2)
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ok, one module loaded.
+
+-------------------------------------------------------------------------------------
+
+Prelude> :l lab12.hs 
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> ture  
+
+<interactive>:3:1: error:
+    * Variable not in scope: ture
+    * Perhaps you meant one of these:
+        `pure' (imported from Prelude), `true' (line 149)
+*Main> true
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> false
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> lambdaAnd
+Lambda "b1" (Lambda "b2" (App (App (Var "b1") (Var "b2")) (Lambda "x" (Lambda "y" (Var "y")))))
+*Main> exAnd
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exAnd2
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exAnd1
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> exAnd2
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> exAnd3
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> exAnd4
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> :
+:?           :back        :browse!     :cmd         :ctags!      :delete      :edit        :force       :history     :instances   :kind!       :load!       :print       :reload!     :set         :showi       :steplocal   :type        :unset
+:abandon     :break       :cd          :continue    :def         :disable     :enable      :forward     :info        :issafe      :list        :main        :quit        :run         :seti        :sprint      :stepmodule  :unadd       :where
+:add         :browse      :check       :ctags       :def!        :doc         :etags       :help        :info!       :kind        :load        :module      :reload      :script      :show        :step        :trace       :undef
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exOr1
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exOr1
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> exOr2
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> ex
+ex01        ex02        ex03        ex04        ex04'       ex09        ex3         ex5         exAnd1      exAnd2      exAnd3      exAnd4      exOr1       exOr2       exOr3       exOr4       exp         exponent    expression
+*Main> exOr3
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exOr4
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exNot1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exNot2
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exSucc1 
+Lambda "s" (Lambda "z" (App (Var "s") (Var "z")))
+*Main> :r      
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> intToLambda1
+
+<interactive>:28:1: error:
+    * Variable not in scope: intToLambda1
+    * Perhaps you meant one of these:
+        `intToLambda' (line 219), `exIntToLambda1' (line 222)
+*Main> exIntToLambda1
+App (Lambda "n" (Lambda "s" (Lambda "z" (App (Var "s") (App (App (Var "n") (Var "s")) (Var "z")))))) (Lambda "s" (Lambda "z" (Var "z")))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exIntToLambda1
+Lambda "s" (Lambda "z" (App (Var "s") (Var "z")))
+*Main> exIntToLambda2
+Lambda "s" (Lambda "z" (App (Var "s") (App (Var "s") (Var "z"))))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> intToLambda 5
+App (Lambda "n" (Lambda "s" (Lambda "z" (App (Var "s") (App (App (Var "n") (Var "s")) (Var "z")))))) (App (Lambda "n" (Lambda "s" (Lambda "z" (App (Var "s") (App (App (Var "n") (Var "s")) (Var "z")))))) (App (Lambda "n" (Lambda "s" (Lambda "z" (App 
+(Var "s") (App (App (Var "n") (Var "s")) (Var "z")))))) (App (Lambda "n" (Lambda "s" (Lambda "z" (App (Var "s") (App (App (Var "n") (Var "s")) (Var "z")))))) (App (Lambda "n" (Lambda "s" (Lambda "z" (App (Var "s") (App (App (Var "n") (Var "s")) (Var "z")))))) (Lambda "s" (Lambda "z" (Var "z")))))))
+*Main> exIntToLambda5
+Lambda "s" (Lambda "z" (App (Var "s") (App (Var "s") (App (Var "s") (App (Var "s") (App (Var "s") (Var "z")))))))
+*Main> :r     
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> intToLambda 5
+Lambda "s" (Lambda "z" (App (Var "s") (App (Var "s") (App (Var "s") (App (Var "s") (App (Var "s") (Var "z")))))))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+
+lab12.hs:228:1: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In an equation for `lambdaToInt': lambdaToInt term = ...
+    |
+228 | lambdaToInt term = length (free term)
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ok, one module loaded.
+*Main> lambdaToInt (Lambda "s" (Lambda "z" (App (Var "s") (App (Var "s") (App (Var "s") (App (Var "s") (App (Var "s") (Var "z"))))))))
+0
+*Main> lambdaToInt (Lambda "s" (Lambda "z" (App (Var "s") (App (Var "s") (Var "z")))))
+0
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+
+lab12.hs:228:1: warning: [-Woverlapping-patterns]
+    Pattern match is redundant
+    In an equation for `lambdaToInt': lambdaToInt (Lambda s term) = ...
+    |
+228 | lambdaToInt (Lambda s term) = length (free term)
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ok, one module loaded.
+*Main> lambdaToInt (Lambda "s" (Lambda "z" (App (Var "s") (App (Var "s") (Var "z")))))
+0
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> lambdaToInt (Lambda "s" (Lambda "z" (App (Var "s") (App (Var "s") (Var "z")))))
+2
+*Main> lambdaToInt (Lambda "s" (Lambda "z" (App (Var "s") (App (Var "s") (App (Var "s") (App (Var "s") (App (Var "s") (Var "z"))))))))
+5
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaPlus
+15
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaPlus
+370
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaMult 
+31
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaMult 
+150
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exIs
+exIsZero0  exIszero1
+*Main> exIsZero0 
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exIsZero1
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exPair1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exPair2
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exP
+exPair1  exPair2  exPred
+*Main> exPred 
+9
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exPred 
+Interrupted.
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exPred 
+99
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaMinus 
+5
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaMinus 
+7
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaMinus 
+0
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> :r
+Ok, one module loaded.
+*Main> exLambdaMinus 
+0
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaLeq1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaLeq2
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaEq1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaEq2
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaEq2
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaEq1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaEq2
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaEq2
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaEq2
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaEq1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaEq2
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaEq1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaLeq1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaLeq2
+Lambda "x" (Lambda "y" (Var "y"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaLeq3
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> :r
+[1 of 1] Compiling Main             ( lab12.hs, interpreted )
+Ok, one module loaded.
+*Main> exLambdaEq1
+Lambda "x" (Lambda "y" (Var "x"))
+*Main> exLambdaEq2
+Lambda "x" (Lambda "y" (Var "y"))
+*Main>
