@@ -1,0 +1,269 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS D:\Vlad\Facultate An II Sem II\PF\Sapt_8 - simulare> ghci
+GHCi, version 8.10.4: https://www.haskell.org/ghc/  :? for help
+Prelude> :l Enia_Vlad-Ieftimie_E4.hs 
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> fst
+fst      fstword
+*Main> fstword "abc cd"
+"abc"  
+*Main> fstword "Ana are mere"
+"Ana"  
+*Main> fstword " Ana are mere"
+""
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> spacetrim "   Ana are mere"
+"Ana are mere"
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> fstwordaux " Ana are mere"
+""
+*Main> fstwordaux "Ana are mere" 
+"Ana"
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> fst
+fst         fstword     fstwordaux
+*Main> fstword "  Ana are mere"
+"Ana"
+*Main> fstword "Ana are mere"  
+"Ana"
+*Main> fstword " "           
+""
+*Main> fstword " a a a"
+"a"
+*Main> fstword "       Ana are mere"
+"Ana"
+*Main> fstword "Ana are mere"  
+"Ana"
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> fstword "       Ana are mere"
+"Ana"
+*Main> fstword "Ana are mere"
+"Ana"
+*Main> fstword " a a a"
+"a"
+*Main> fstword "       Ana are mere"
+"Ana"
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> trimleft "     ana are mere"
+"ana are mere"
+*Main> trimleft "     a"           
+"a"
+*Main> trimleft "     " 
+""
+*Main> trimleft "_  a   "
+"_  a   "
+*Main> trimleft "  a   " 
+"a   "
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> restofstring "ana are mere
+
+<interactive>:29:27: error:
+    lexical error in string/character literal at end of input
+*Main> restofstring "ana are mere"
+" are mere"
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> restofstring "    ana are mere"
+" are mere"
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> getfirst "     ana are mere"
+("ana"," are mere")
+*Main> getfirst " ana are mere"    
+("ana"," are mere")
+*Main> getfirst "ana are mere" 
+("ana"," are mere")
+*Main> getfirst "a"           
+("a","")
+*Main> getfirst "a a"
+("a"," a")
+*Main> getfirst "a " 
+("a"," ")
+*Main> getfirst "a    "
+("a","    ")
+*Main> getfirst " "    
+("","")
+*Main> getfirst "" 
+("","")
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+(i-search)`': lowerword "ANA ARE MERE"
+*Main> lowerword "ANA ARE MERE"
+("ana are mere","lower")
+*Main> getwords "ANA ARE MERE" 
+(["ANA","ARE","MERE"],"words")
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> compose lowerword getwords "ASD ASDF"
+(["asd","asdf"],"lowerwords")
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> compose lowerword getwords "ASD ASDF"
+(["asd","asdf"],"lower words")
+*Main> compose lowerword getwords "   ANA ARE MERE"
+(["ana","are","mere"],"lower words")
+*Main> compose lowerword getwords "MeRe"           
+(["mere"],"lower words")
+*Main> compose lowerword getwords ""    
+([],"lower words")
+*Main> compose lowerword getwords " "
+([],"lower words")
+*Main> foldl isneg [1,-1,2,3]
+
+<interactive>:54:7: error:
+    Variable not in scope: isneg :: [a1] -> a -> [a1]
+*Main> foldl isneg 0 [1,-1,2,3]
+
+<interactive>:55:7: error:
+    Variable not in scope: isneg :: b -> a0 -> b
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> foldl isneg 0 [1,-1,2,3]
+1
+*Main> foldl isneg 0 [1,-1,-2,3]
+2
+*Main> foldl isneg 0 [1,-1,-2,-3]
+3
+*Main> countneg [1,-1,-2,-3]
+
+<interactive>:60:1: error:
+    Variable not in scope: countneg :: [a0] -> t
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> countneg [1,-1,-2,-3]
+3
+*Main> countneg [1,-1,-2,-3]
+3
+*Main> countneg [1,-1,2,-3] 
+2
+*Main> countneg [1,1,2,3]  
+0
+*Main> countneg [1,1,2,-13]
+1
+*Main> countneg [1]
+0
+*Main> countneg [-1]
+1
+*Main> countneg [0,0,0,-0]
+0
+*Main> countneg [0,0,0,1.-1]
+
+<interactive>:70:18: error:
+    * Variable not in scope: (.-) :: t0 -> t1 -> Integer
+    * Perhaps you meant one of these:
+        `-' (imported from Prelude), `.' (imported from Prelude)
+*Main> countneg [0,0,0,1,-1]
+1
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> (Nod 8 0 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza )) (Nod 10 1 Frunza (Nod 14 2 Frunza Frunza)))
+
+<interactive>:73:28: error:
+    * Couldn't match expected type `Arb'
+                  with actual type `Integer -> Arb'
+    * Probable cause: `Frunza' is applied to too few arguments
+      In the third argument of `Nod', namely `Frunza'
+      In the third argument of `Nod', namely `(Nod 1 2 Frunza Frunza)'
+      In the third argument of `Nod', namely
+        `(Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza))'
+
+<interactive>:73:35: error:
+    * Couldn't match expected type `Arb'
+                  with actual type `Integer -> Arb'
+    * Probable cause: `Frunza' is applied to too few arguments
+      In the fourth argument of `Nod', namely `Frunza'
+      In the third argument of `Nod', namely `(Nod 1 2 Frunza Frunza)'
+      In the third argument of `Nod', namely
+        `(Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza))'
+
+<interactive>:73:52: error:
+    * Couldn't match expected type `Arb'
+                  with actual type `Integer -> Arb'
+    * Probable cause: `Frunza' is applied to too few arguments
+      In the third argument of `Nod', namely `Frunza'
+      In the fourth argument of `Nod', namely `(Nod 6 2 Frunza Frunza)'
+      In the third argument of `Nod', namely
+        `(Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza))'
+
+<interactive>:73:59: error:
+    * Couldn't match expected type `Arb'
+                  with actual type `Integer -> Arb'
+    * Probable cause: `Frunza' is applied to too few arguments
+      In the fourth argument of `Nod', namely `Frunza'
+      In the fourth argument of `Nod', namely `(Nod 6 2 Frunza Frunza)'
+      In the third argument of `Nod', namely
+        `(Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza))'
+
+<interactive>:73:79: error:
+    * Couldn't match expected type `Arb'
+                  with actual type `Integer -> Arb'
+    * Probable cause: `Frunza' is applied to too few arguments
+      In the third argument of `Nod', namely `Frunza'
+      In the fourth argument of `Nod', namely
+        `(Nod 10 1 Frunza (Nod 14 2 Frunza Frunza))'
+      In the expression:
+        (Nod
+           8 0 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza))
+           (Nod 10 1 Frunza (Nod 14 2 Frunza Frunza)))
+
+<interactive>:73:96: error:
+    * Couldn't match expected type `Arb'
+                  with actual type `Integer -> Arb'
+    * Probable cause: `Frunza' is applied to too few arguments
+      In the third argument of `Nod', namely `Frunza'
+      In the fourth argument of `Nod', namely `(Nod 14 2 Frunza Frunza)'
+      In the fourth argument of `Nod', namely
+        `(Nod 10 1 Frunza (Nod 14 2 Frunza Frunza))'
+
+<interactive>:73:103: error:
+    * Couldn't match expected type `Arb'
+                  with actual type `Integer -> Arb'
+    * Probable cause: `Frunza' is applied to too few arguments
+      In the fourth argument of `Nod', namely `Frunza'
+      In the fourth argument of `Nod', namely `(Nod 14 2 Frunza Frunza)'
+      In the fourth argument of `Nod', namely
+        `(Nod 10 1 Frunza (Nod 14 2 Frunza Frunza))'
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> (Nod 8 0 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza )) (Nod 10 1 Frunza (Nod 14 2 Frunza Frunza)))
+Nod 8 0 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza)) (Nod 10 1 Frunza (Nod 14 2 Frunza Frunza))
+*Main> :r
+[1 of 1] Compiling Main             ( Enia_Vlad-Ieftimie_E4.hs, interpreted )
+Ok, one module loaded.
+*Main> checklevel (Nod 8 0 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza )) (Nod 10 1 Frunza (Nod 14 2 Frunza Frunza)))
+True
+*Main> checklevel (Nod 8 0 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza )) (Nod 10 10 Frunza (Nod 14 2 Frunza Frunza)))
+False
+*Main> checklevel (Nod 8 0 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza )) (Nod 10 0 Frunza (Nod 14 2 Frunza Frunza)))
+False
+*Main> checklevel (Nod 8 0 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza )) (Nod 10 1 Frunza (Nod 14 2 Frunza Frunza)))
+True
+*Main> checklevel (Nod 8 1 (Nod 3 1 (Nod 1 2 Frunza Frunza) (Nod 6 2 Frunza Frunza )) (Nod 10 1 Frunza (Nod 14 2 Frunza Frunza)))
+False
+*Main>

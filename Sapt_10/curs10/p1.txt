@@ -1,0 +1,5 @@
+{    x := 0;    y := 10;    for x; x < 10; x := x + 2; do    {        y := y + 10;    }   }  /* - program fara erori, cu for */      
+/*{    x := 10;     y := 2;    if x = 5 || ! y = 2 then    {        x := x / y;    }    else    {        y := y * y;    }} - program fara erori */
+/* {    x := 10;     y := 2;    if x = 5 || ! y = 2 then    {        x := x / y;    }    else    {        y := y * z;    }} - program cu eroare variable not declared */ 
+/* {    x := 10;     y := 0;    if x = 5 || ! y = 2 then    {        x := x / y;    }    else    {        y := y * y;    }} - program cu eroare division by zero */ 
+
